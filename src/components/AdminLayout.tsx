@@ -40,7 +40,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
 
       <aside className={`
-        fixed inset-y-0 left-0 z-50 w-[280px] bg-white border-r border-[#E5E7EB] flex flex-col transition-transform duration-300 lg:relative lg:translate-x-0
+        fixed inset-y-0 left-0 z-50 w-70 bg-white border-r border-[#E5E7EB] flex flex-col transition-transform duration-300 lg:relative lg:translate-x-0
         ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
       `}>
         <div className="p-6 border-b border-[#E5E7EB] flex items-center justify-between">
@@ -112,7 +112,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         </header>
 
         <main className="flex-1 overflow-auto bg-[#F9FAFB]">
-          <div className="p-4 lg:p-8 max-w-[1600px] mx-auto">
+          <div className="p-4 lg:p-8 max-w-400 mx-auto">
             {children}
           </div>
         </main>
