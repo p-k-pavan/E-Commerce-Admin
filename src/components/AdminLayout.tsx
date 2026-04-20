@@ -1,4 +1,4 @@
-'use client'; // Required for usePathname and interactivity
+'use client';
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -113,7 +113,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
         <main className="flex-1 overflow-auto bg-[#F9FAFB]">
           <div className="p-4 lg:p-8 max-w-[1600px] mx-auto">
-            {children} {/* This is where your page content will render */}
+            {children}
           </div>
         </main>
       </div>
