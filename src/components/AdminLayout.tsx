@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { 
   LayoutDashboard, 
   ShoppingBag, 
@@ -15,6 +15,7 @@ import {
   X 
 } from "lucide-react";
 import { useState } from "react";
+import useAuthStore from "@/store/authStore";
 
 const menuItems = [
   { icon: LayoutDashboard, label: "Overview", path: "/dashboard" },
@@ -29,6 +30,13 @@ const menuItems = [
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const {user} = useAuthStore();
+  console.log("AdminLayout Rendered, User:", user);
+  const router = useRouter();
+  if(!user) {
+    router.push("/");
+    return null;
+  }
 
   return (
     <div className="flex h-screen bg-[#F9FAFB]">
@@ -85,8 +93,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               <span className="text-[#16A34A] font-semibold text-sm">AD</span>
             </div>
             <div className="flex-1 overflow-hidden">
-              <div className="text-sm font-semibold text-[#111827] truncate">Admin User</div>
-              <div className="text-xs text-[#6B7280] truncate">admin@namma.com</div>
+              <div className="text-sm font-semibold text-[#111827] truncate">{user?.name}</div>
+              <div className="text-xs text-[#6B7280] truncate">{user?.email}</div>
             </div>
           </div>
         </div>
