@@ -20,6 +20,7 @@ const menuItems = [
   { icon: LayoutDashboard, label: "Overview", path: "/dashboard" },
   { icon: ShoppingBag, label: "Orders", path: "/dashboard/orders" },
   { icon: Package, label: "Products", path: "/dashboard/products" },
+  {icon: Layers, label: "Sub-Categories", path: "/dashboard/sub-categories" },
   { icon: Layers, label: "Categories", path: "/dashboard/categories" },
   { icon: Users, label: "Customers", path: "/dashboard/customers" },
   { icon: Settings, label: "Settings", path: "/dashboard/settings" },
