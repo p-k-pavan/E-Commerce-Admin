@@ -33,10 +33,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const {user} = useAuthStore();
   console.log("AdminLayout Rendered, User:", user);
   const router = useRouter();
-  if(!user) {
-    router.push("/");
-    return null;
-  }
+
 
   return (
     <div className="flex h-screen bg-[#F9FAFB]">

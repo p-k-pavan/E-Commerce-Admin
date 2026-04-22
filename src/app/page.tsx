@@ -11,10 +11,7 @@ export default function Login() {
   const router = useRouter();
   const { user } = useAuthStore();
  
-  if(user) {
-    router.back();
-    return null;
-  }
+ 
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: '',
